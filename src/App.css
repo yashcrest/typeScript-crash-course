@@ -32,9 +32,9 @@
     animation: logo-spin infinite 20s linear;
   }
 
-  /* a:nth-of-type(1) .logo {
+  a:nth-of-type(1) .logo {
     animation: logo-spin infinite 20s linear;
-  } */
+  }
 }
 
 .card {
