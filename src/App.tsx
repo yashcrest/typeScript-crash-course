@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Header from "./Header";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,6 +16,9 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+      </div>
+      <div>
+        <Header title="This is header from app.jsx file" color="black" />
       </div>
       <h1>Vite + React</h1>
       <div className="card">
