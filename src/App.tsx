@@ -3,9 +3,17 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./Header";
+import Button from "./components/common/Button";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.body.className = newTheme;
+  };
 
   return (
     <>
@@ -18,7 +26,7 @@ function App() {
         </a>
       </div>
       <div>
-        <Header title="This is header from app.jsx file" color="black" />
+        <Header title="This is header from app.jsx file" color="red" />
       </div>
       <h1>Vite + React</h1>
       <div className="card">
@@ -26,7 +34,7 @@ function App() {
           count is {count}
         </button>
         {/* change theme  */}
-        <button>change theme</button>
+        <Button toggleTheme={toggleTheme} />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
