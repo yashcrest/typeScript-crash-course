@@ -1,8 +1,8 @@
-interface Props {
+interface ButtonProps {
   toggleTheme: () => void;
 }
 
-const Button = ({ toggleTheme }: Props) => {
+const Button = ({ toggleTheme }: ButtonProps) => {
   return (
     <>
       <button onClick={toggleTheme}>Change theme</button>
