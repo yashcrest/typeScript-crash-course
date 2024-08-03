@@ -1,4 +1,4 @@
-import { Reducer, useReducer } from "react";
+import { useReducer } from "react";
 
 type State = {
   count: number;
@@ -11,6 +11,7 @@ type Action = {
 
 // reducer function
 function reducer(state: State, action: Action) {
+  //destructuring type from action
   const { type } = action;
 
   //switch condition based on the type
@@ -28,6 +29,7 @@ function reducer(state: State, action: Action) {
 
 export default function Demo() {
   const [state, dispatch] = useReducer(reducer, {
+    //this is the initial state passed
     count: 0,
     error: null,
   });
