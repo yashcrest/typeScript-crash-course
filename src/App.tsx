@@ -4,7 +4,6 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./components/Header";
 import Button from "./components/common/Button";
-import Demo from "./reducerExample/reducer";
 import AgeIncrement from "./reducerExample/AgeIncrement";
 
 function App() {
