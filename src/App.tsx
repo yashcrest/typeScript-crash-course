@@ -15,7 +15,6 @@ function App() {
     setTheme(newTheme);
     document.body.className = newTheme;
   };
-
   return (
     <>
       <div>
