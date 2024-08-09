@@ -29,7 +29,7 @@ const objectExample1 = () => {
   const [user1, setUser1] = useState<User>(null); // also with this case you will get an error as you are passing null as the initial value for the object but you have defined the User type for it. To fix this see another example
   const name1 = user1?.name;
 
-  //useState type with tuple value
+  //useState type with tuple value (user obj & null)
   const [user2, setUser2] = useState<User | null>(null);
 
   const name2 = user2?.name;

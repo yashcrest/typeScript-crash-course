@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button, { Text } from "./Button";
 
 const Page = () => {
   return (
@@ -9,6 +9,7 @@ const Page = () => {
         defaultValue="test"
         className="test"
       />
+      <Text type="" />
     </>
   );
 };
