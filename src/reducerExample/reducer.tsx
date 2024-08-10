@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
 type State = {
   count: number;
@@ -6,7 +6,7 @@ type State = {
 };
 
 type Action = {
-  type: "increment" | "decrement";
+  type: "increment" | "decrement" | "clearError";
 };
 
 // reducer function
@@ -17,10 +17,31 @@ function reducer(state: State, action: Action) {
   //switch condition based on the type
   switch (type) {
     case "increment": {
-      return { ...state, count: state.count + 1 };
+      const newCount = state.count + 1;
+      const hasError = newCount > 10;
+      return {
+        ...state,
+        count: hasError ? state.count : newCount,
+        error: hasError ? "Dont go any more motherfucker" : null,
+      };
     }
     case "decrement": {
-      return { ...state, count: state.count - 1 };
+      const newCount = state.count - 1;
+      const hasError = newCount < 0;
+      return {
+        ...state,
+        count: hasError ? state.count : newCount,
+        error: hasError
+          ? "You dont wanna go any further than that. Trust me!"
+          : null,
+      };
+    }
+
+    case "clearError": {
+      return {
+        ...state,
+        error: null,
+      };
     }
     default:
       return state;
@@ -34,11 +55,21 @@ export default function Demo() {
     error: null,
   });
 
+  //clear error msg after 3 seconds
+  useEffect(() => {
+    if (state.error) {
+      const timer = setTimeout(() => {
+        dispatch({ type: "clearError" });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [state.error]);
+
   return (
     <div>
       {/* state is able to access the count parameter from the initial obj passed to useReducer */}
       <div>Count: {state.count}</div>
-      {state.error && <div>{state.error}</div>}
+      {state.error && <h2>{state.error}</h2>}
       {/* this button are using the dispatch function to dispatrch action to useReducer */}
       <button onClick={() => dispatch({ type: "increment" })}>Increment</button>
       <button onClick={() => dispatch({ type: "decrement" })}>Decrement</button>

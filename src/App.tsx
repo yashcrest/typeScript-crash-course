@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/common/Header";
 import Button from "./components/common/Button";
 import AgeIncrement from "./reducerExample/AgeIncrement";
+import Demo from "./reducerExample/reducer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -42,8 +43,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      {/* <Demo /> */}
-      <AgeIncrement />
+      <Demo />
+      {/* <AgeIncrement /> */}
     </>
   );
 }
