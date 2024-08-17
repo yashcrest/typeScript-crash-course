@@ -44,3 +44,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.age-increment {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+}
