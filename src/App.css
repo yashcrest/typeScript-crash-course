@@ -46,7 +46,6 @@
 }
 
 .age-increment {
-  display: flex;
-  flex-direction: column;
-  width: min-content;
+  display: grid;
+  place-content: center;
 }

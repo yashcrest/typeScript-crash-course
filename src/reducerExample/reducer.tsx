@@ -10,7 +10,7 @@ type Action = {
 };
 
 // reducer function
-function reducer(state: State, action: Action) {
+const reducer = (state: State, action: Action) => {
   //destructuring type from action
   const { type } = action;
 
@@ -22,7 +22,7 @@ function reducer(state: State, action: Action) {
       return {
         ...state,
         count: hasError ? state.count : newCount,
-        error: hasError ? "Dont go any more motherfucker" : null,
+        error: hasError ? "Dont go any more" : null,
       };
     }
     case "decrement": {
@@ -37,6 +37,7 @@ function reducer(state: State, action: Action) {
       };
     }
 
+    // for clearing the error msg shown
     case "clearError": {
       return {
         ...state,
@@ -46,7 +47,7 @@ function reducer(state: State, action: Action) {
     default:
       return state;
   }
-}
+};
 
 export default function Demo() {
   const [state, dispatch] = useReducer(reducer, {

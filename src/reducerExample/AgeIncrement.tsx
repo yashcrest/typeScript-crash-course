@@ -49,17 +49,19 @@ const AgeIncrement = () => {
   const { age, error } = state;
   return (
     <>
-      {/* displaying error */}
-      {error && <div>{error}</div>}
-      <button onClick={() => dispatch({ type: "increase_age" })}>
-        Increase your motherfucking age
-      </button>
-      <button onClick={() => dispatch({ type: "decrease_age" })}>
-        Decrease your motherfucking age
-      </button>
-      <p>
-        You motherFucker are {age} {age <= 1 ? "year" : "years"} old!
-      </p>
+      <div className="age-increment">
+        {/* displaying error */}
+        {error && <div>{error}</div>}
+        <button onClick={() => dispatch({ type: "increase_age" })}>
+          Increase your age
+        </button>
+        <button onClick={() => dispatch({ type: "decrease_age" })}>
+          Decrease your age
+        </button>
+        <p>
+          You are {age} {age <= 1 ? "year" : "years"} old!
+        </p>
+      </div>
     </>
   );
 };
