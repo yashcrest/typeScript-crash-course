@@ -30,7 +30,7 @@ const objectExample1 = () => {
   const name1 = user1?.name;
 
   //useState type with tuple value (user obj & null)
-  const [user2, setUser2] = useState<User | null>(null);
+  const [user2, setUser2] = useState<User | null>(null); // ✅
 
   const name2 = user2?.name;
 };
